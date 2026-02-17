@@ -1,0 +1,34 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Debug bitcoind (RegTest)",
+            "type": "cppvsdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/src/Release/bitcoind.exe",
+            "args": [
+                "-regtest",
+                "-printtoconsole",
+                "-debug=1",
+                "-noconnect"
+            ],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}/src/Release",
+            "environment": [],
+            "console": "integratedTerminal",
+            "preLaunchTask": "Build Bitcoin Core (Release)"
+        },
+        {
+            "name": "Debug bitcoin-cli",
+            "type": "cppvsdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/src/Release/bitcoin-cli.exe",
+            "args": [
+                "-regtest",
+                "getblockchaininfo"
+            ],
+            "cwd": "${workspaceFolder}/src/Release",
+            "console": "integratedTerminal"
+        }
+    ]
+}
